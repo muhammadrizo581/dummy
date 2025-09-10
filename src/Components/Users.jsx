@@ -10,10 +10,10 @@ export default function Users() {
     e.preventDefault();
 
     if (!name || age === "") {
-      return alert("Please fill all fields!");
+      return alert("Please fill all fields");
     }
     if (Number(age) < 0) {
-      return alert("Age cannot be negative!");
+      return alert("Age cannot be negative");
     }
 
     if (editingUser) {
