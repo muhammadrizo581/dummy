@@ -10,10 +10,10 @@ export default function Users() {
     e.preventDefault();
 
     if (!name || age === "") {
-      return alert("Please fill all fields");
+      return alert("MAlumotlarni kirigizin");
     }
     if (Number(age) < 0) {
-      return alert("Age cannot be negative");
+      return alert("Min yosh 0");
     }
 
     if (editingUser) {

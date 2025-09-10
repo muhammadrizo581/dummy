@@ -17,14 +17,14 @@ export default class Food extends Component {
     const { name, category, price, foods, editingFood } = this.state;
 
     if (!name || !category || price === "") {
-      return alert("Barcha maydonlarni to'ldiring!");
+      return alert("Malumotlarni toldiring");
     }
     if (Number(price) < 0) {
-      return alert("Narx manfiy bo'lishi mumkin emas!");
+      return alert("Min narx 0");
     }
 
     if (editingFood) {
-      // update
+      
       const updatedFoods = foods.map((food) =>
         food.id === editingFood.id
           ? { ...food, name, category, price: Number(price) }
@@ -38,7 +38,7 @@ export default class Food extends Component {
         editingFood: null,
       });
     } else {
-      // add new
+      
       const newFood = {
         id: Date.now(),
         name,
@@ -75,7 +75,7 @@ export default class Food extends Component {
     const { name, category, price, foods, editingFood } = this.state;
     return (
       <section className="max-w-6xl mx-auto mt-10 grid grid-cols-3 gap-6">
-        {/* LEFT FORM */}
+        
         <div className="col-span-1 bg-purple-500 p-6 rounded-2xl text-white">
           <h2 className="text-2xl font-bold mb-6 text-center">
             {editingFood ? "Update Food" : "Add Food"}
@@ -123,7 +123,7 @@ export default class Food extends Component {
           </form>
         </div>
 
-        {/* RIGHT LIST */}
+        
         <div className="col-span-2 bg-gray-50 p-6 rounded-2xl">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
             Food List
