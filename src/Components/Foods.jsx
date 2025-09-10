@@ -141,7 +141,7 @@ export default class Food extends Component {
                   <div className="flex gap-3 mt-4">
                     <button
                       onClick={() => this.handleUpdate(food)}
-                      className="flex-1 bg-yellow-400 text-white py-2 rounded-xl"
+                      className="flex-1 bg-blue-600 text-white py-2 rounded-xl"
                     >
                       Update
                     </button>
