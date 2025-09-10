@@ -87,7 +87,7 @@ export default class Products extends Component {
   render() {
     const { title, price, discount, data, editingItem } = this.state;
     return (
-      <section className="max-w-6xl mx-auto mt-10 grid grid-cols-3 gap-6">
+      <section className="max-w-[1152px] mx-auto mt-10 grid grid-cols-3 gap-6">
         
         <div className="col-span-1  bg-purple-500  p-6 rounded-2xl text-white">
           <h2 className="text-2xl font-bold mb-6 text-center">
@@ -100,7 +100,7 @@ export default class Products extends Component {
               onChange={(e) => this.setState({ title: e.target.value })}
               type="text"
               placeholder="Title"
-              className="p-3 rounded-xl text-gray-800"
+              className="p-3 rounded-[12px] text-gray-800"
             />
             <input
               required
@@ -108,25 +108,25 @@ export default class Products extends Component {
               onChange={(e) => this.setState({ price: e.target.value })}
               type="number"
               placeholder="Price"
-              className="p-3 rounded-xl text-gray-800 "
+              className="p-3 rounded-[12px] text-gray-800 "
             />
             <input
               value={discount}
               onChange={(e) => this.setState({ discount: e.target.value })}
               type="number"
               placeholder="Discount % (optional)"
-              className="p-3 rounded-xl text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="p-3 rounded-[12px] text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400"
             />
 
             <div className="flex gap-3">
-              <button className="flex-1 bg-yellow-400 text-gray-900 font-semibold py-2 rounded-xl">
+              <button className="flex-1 bg-yellow-400 text-gray-900 font-semibold py-2 rounded-[12px]">
                 {editingItem ? "Update" : "Submit"}
               </button>
               {editingItem && (
                 <button
                   type="button"
                   onClick={this.cancelEdit}
-                  className="flex-1 bg-red-500 text-white font-semibold py-2 rounded-xl"
+                  className="flex-1 bg-red-500 text-white font-semibold py-2 rounded-[12px]"
                 >
                   Cancel
                 </button>
@@ -146,7 +146,7 @@ export default class Products extends Component {
               {data.map((item) => (
                 <div
                   key={item.id}
-                  className="p-5 bg-white rounded-xl "
+                  className="p-5 bg-white rounded-[12px] "
                 >
                   <h3 className="text-xl font-bold text-gray-800">
                     {item.title}
@@ -187,13 +187,13 @@ export default class Products extends Component {
                   <div className="flex gap-3 mt-4">
                     <button
                       onClick={() => this.handleUpdate(item)}
-                      className="flex-1 bg-blue-600  text-white py-2 rounded-xl"
+                      className="flex-1 bg-blue-600  text-white py-2 rounded-[12px]"
                     >
                       Update
                     </button>
                     <button
                       onClick={() => this.handleDelete(item.id)}
-                      className="flex-1  bg-red-500 text-white py-2 rounded-xl"
+                      className="flex-1  bg-red-500 text-white py-2 rounded-[12px]"
                     >
                       Delete
                     </button>

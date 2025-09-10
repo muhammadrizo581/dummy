@@ -10,7 +10,7 @@ export default function Users() {
     e.preventDefault();
 
     if (!name || age === "") {
-      return alert("MAlumotlarni kirigizin");
+      return alert("Malumotlarni kirigizin");
     }
     if (Number(age) < 0) {
       return alert("Min yosh 0");
@@ -53,7 +53,7 @@ export default function Users() {
   };
 
   return (
-    <section className="max-w-6xl mx-auto mt-10 grid grid-cols-3 gap-6">
+    <section className="max-w-[1152px] mx-auto mt-[40px] grid grid-cols-3 gap-6">
       <div className="col-span-1 bg-purple-500 p-6 rounded-2xl text-white">
         <h2 className="text-2xl font-bold mb-6 text-center">
           {editingUser ? "Update User" : "Add User"}
@@ -65,7 +65,7 @@ export default function Users() {
             onChange={(e) => setName(e.target.value)}
             type="text"
             placeholder="Name"
-            className="p-3 rounded-xl text-gray-800"
+            className="p-3 rounded-[12px] text-gray-800"
           />
           <input
             required
@@ -73,18 +73,18 @@ export default function Users() {
             onChange={(e) => setAge(e.target.value)}
             type="number"
             placeholder="Age"
-            className="p-3 rounded-xl text-gray-800"
+            className="p-3 rounded-[12px] text-gray-800"
           />
 
           <div className="flex gap-3">
-            <button className="flex-1 bg-yellow-400 text-gray-900 font-semibold py-2 rounded-xl">
+            <button className="flex-1 bg-yellow-400 text-gray-900 font-semibold py-2 rounded-[12px]">
               {editingUser ? "Update" : "Submit"}
             </button>
             {editingUser && (
               <button
                 type="button"
                 onClick={cancelEdit}
-                className="flex-1 bg-red-500 text-white font-semibold py-2 rounded-xl"
+                className="flex-1 bg-red-500 text-white font-semibold py-2 rounded-[12px]"
               >
                 Cancel
               </button>
@@ -103,20 +103,20 @@ export default function Users() {
         ) : (
           <div className="grid gap-6 grid-cols-2">
             {users.map((user) => (
-              <div key={user.id} className="p-5 bg-white rounded-xl">
+              <div key={user.id} className="p-5 bg-white rounded-[12px]">
                 <h3 className="text-xl font-bold text-gray-800">{user.name}</h3>
                 <p className="text-gray-600 mt-1">{user.age} years old</p>
 
                 <div className="flex gap-3 mt-4">
                   <button
                     onClick={() => handleUpdate(user)}
-                    className="flex-1 bg-blue-600  text-white py-2 rounded-xl"
+                    className="flex-1 bg-blue-600  text-white py-2 rounded-[12px]"
                   >
                     Update
                   </button>
                   <button
                     onClick={() => handleDelete(user.id)}
-                    className="flex-1 bg-red-500 text-white py-2 rounded-xl"
+                    className="flex-1 bg-red-500 text-white py-2 rounded-[12px]"
                   >
                     Delete
                   </button>
